@@ -23,4 +23,21 @@ A: select department,max(salary) as max_salary from employees group by departmen
 Q5. Count employees per city
 A: select city, count(*) as employee_count from employees group by city;
 
+Q6. employees with salary less than 35000
+    select name from employees where salary<35000
+
+Q7. Unique department from employees
+    select distinct department from employees
+    
+Q8. SALARY BAND LOGIC
+    select name,salary, 
+            case 
+               when salary > 60000 then 'high'
+               else 'low'
+            end as salary_band
+  from employees        
+
+Q9. Department that has the highest number of employees using only group by +order by +limit 
+
+
 
