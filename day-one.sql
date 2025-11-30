@@ -17,10 +17,10 @@ A: select name, department,salary,
     end as salary_band
   from employees;
 
-Q4.Highest salary per department
+Q4. Highest salary per department
 A: select department,max(salary) as max_salary from employees group by department;
 
-Q5.Count employees per city
+Q5. Count employees per city
 A: select city, count(*) as employee_count from employees group by city;
 
 
