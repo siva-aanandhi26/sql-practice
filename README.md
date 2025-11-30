@@ -1,4 +1,4 @@
-# sql-day-one
+# sql-practice
 
 This repository contains the set of files that helped me learn SQL. I am currently practising sql to become Data Analyst.
 
