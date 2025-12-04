@@ -8,6 +8,10 @@ departments
 
 | dept_id | dept_name |
 
+shifts
+
+| shift_id | shift_name |
+
   
 ----INNER JOIN----
 Q1. Return employee name and department name
@@ -25,4 +29,13 @@ Q1. Return all departments and their employees
 GOLDEN RULE FOR JOINS (tattoo this in your brain)
   A LEFT JOIN B   → keep ALL A
   A RIGHT JOIN B  → keep ALL B
+
+----FULL OUTER JOIN----
+Q1. Return all employees and departments
+select e.emp_id,e.name,e.dept_id,e.salary,d.dept_name from employees e full join departments d on e.dept_id=d.dept_id
+
+----CROSS JOIN----  
+Q1. Return all shifts and employees
+  select e.emp_id,e.name,s.shift_id,s.shift_name from employees e cross join shifts s
+
   
