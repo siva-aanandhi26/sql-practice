@@ -38,4 +38,17 @@ select e.emp_id,e.name,e.dept_id,e.salary,d.dept_name from employees e full join
 Q1. Return all shifts and employees
   select e.emp_id,e.name,s.shift_id,s.shift_name from employees e cross join shifts s
 
+----TRICKY JOIN INTERVIEW QUESTIONS----
+  
+Q1. Write a query to return employee name,department name and show employees with no department as no_dept also departments with no employees as no_employees
+select e.name,d.dept_name,
+case 
+  when e.name is null then 'no dept'
+  when d.dept_name is null then 'no employees'
+  end as dept_logic
+from employees e full join departments d on e.dept_id=d.dept_id;
+
+Q2. 
+
+
   
