@@ -38,6 +38,22 @@ Q8. SALARY BAND LOGIC
   from employees        
 
 Q9. Department that has the highest number of employees using only group by +order by +limit 
+    select department,count(*) as emp_count from employees group by department order by emp_count desc limit 1;
+
+Q10. Find the highest salary in each department
+    select department,max(salary) as highest_salary from employees group by department 
+
+Q11. percentage of employees earn more than 50,000
+    select count(
+        case 
+            when salary>50000 then '1' 
+        end) * 100 /
+
+count(*) as perc_emp from employees;
+
+Q12. departments have an average salary HIGHER than the overall company average
+    select departments, avg(salary) as avg_salary from employees group by departments having  avg_salary > (select avg(salary) from employees);
+
 
 
 
