@@ -24,4 +24,6 @@ Q8. Find duplicates in a table
 
 Q9. Products never purchased
 
+  select p.product_id,p.product_name from products p where not exists (select 1 from order_items o where o.product_id=p.product_id);
+
 Q10. Products purchased by ALL customers
