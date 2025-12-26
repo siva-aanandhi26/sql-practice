@@ -14,7 +14,11 @@ Q3. Customers with more orders than the average orders per customer (subqueries 
 
 Q4. Find employees whose salary is the highest in their department
 
+  select e1.name,e1.department,e1.salary from employees e1 where e1.salary = (select max(e2.salary) from employees e2 where e2.department = e1.department);
+
 Q5. Return customers who placed orders every month
+
+  
 
 Q6. Employees who earn more than their manager
 
@@ -23,6 +27,8 @@ Q7. Top 3 salaries without window functions
 Q8. Find duplicates in a table
 
 Q9. Products never purchased
+
+  select p.product_id, p.product_name from products p where not exists (select 1 from orders_items o where o.product_id=p.product_id;
 
   select p.product_id,p.product_name from products p where not exists (select 1 from order_items o where o.product_id=p.product_id);
 
