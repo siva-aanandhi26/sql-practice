@@ -8,7 +8,9 @@ Q2. Departments whose avg salary is above company avg
 
   select departments,avg(salary) as avg_salary from employees group by departments having avg(salary)>(select avg(salary) from employees); 
 
-Q3. Customers with more orders than the average orders per customer
+Q3. Customers with more orders than the average orders per customer (subqueries + join)
+
+  select c.customer_id,c.name, count(o.order_id ) as order_count from customers c join orders o on c.customer_id=o.customer_id group by c.customer_id,c.name having count(o.order_id)> (select avg(order_count) from (select count(*) as order_count from orders group by customer_id ) t);
 
 Q4. Find employees whose salary is the highest in their department
 
