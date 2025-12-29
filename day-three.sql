@@ -24,6 +24,8 @@ Q6. Employees who earn more than their manager
 
 Q7. Top 3 salaries without window functions
 
+  select e1.salary from employees e1 where 3>(select count(distinct salary) from employees e2 where e2.salary> e1.salary);
+
 Q8. Find duplicates in a table
 
 Q9. Products never purchased
