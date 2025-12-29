@@ -18,7 +18,7 @@ Q4. Find employees whose salary is the highest in their department
 
 Q5. Return customers who placed orders every month
 
-  
+select customer_id from orders where order_date >=("2024-01-01") and order_date<("2025-01-01")group by customer_id having count(distinct month(order_date))=12;  
 
 Q6. Employees who earn more than their manager
 
