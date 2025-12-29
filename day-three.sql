@@ -22,6 +22,8 @@ select customer_id from orders where order_date >=("2024-01-01") and order_date<
 
 Q6. Employees who earn more than their manager
 
+  
+
 Q7. Top 3 salaries without window functions
 
   select e1.salary from employees e1 where 3>(select count(distinct salary) from employees e2 where e2.salary> e1.salary);
@@ -29,6 +31,7 @@ Q7. Top 3 salaries without window functions
 Q8. Find duplicates in a table
 
   select name from customers group by name having count(*)>1;
+
 Q9. Products never purchased
 
   select p.product_id, p.product_name from products p where not exists (select 1 from orders_items o where o.product_id=p.product_id);
