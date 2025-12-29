@@ -28,6 +28,7 @@ Q7. Top 3 salaries without window functions
 
 Q8. Find duplicates in a table
 
+  select name from customers group by name having count(*)>1;
 Q9. Products never purchased
 
   select p.product_id, p.product_name from products p where not exists (select 1 from orders_items o where o.product_id=p.product_id);
