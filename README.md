@@ -12,7 +12,6 @@ This repository contains the set of files that helped me learn SQL.
 - Business analytics with SQL Skills
 - Full SQL based projects
   
-This is the plan I am sticking to learn consistently.
 
-## update here after finished (personal tracking)
-- Day 1 SQL Fundamentals (where,distinct,group by,having,order by,limit)
+
+
