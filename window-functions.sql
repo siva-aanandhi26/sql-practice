@@ -27,6 +27,21 @@ select category,product,total_spend from rank_spend where rank<=2 order by categ
 
 select user_id,order_id, revenue, revenue *100.0/ SUM(revenue) OVER(partition by user_id) as user_revenue from orders;
 
+4. TOTAL SALES REVENUE FOR EACH PRODUCT LINE
+
+PRODUCT LINE WITH HIGHEST REVENUE SHOULD BE AT THE TOP
+
+Tables:
+products 
+prod_id| prod_name| prod_line
+
+transactions
+transaction_id| prod_id| amount
+
+
+select distinct p.prod_id, sum(t.amount) OVER(PARTITION BY p.prod_line) as revenue from products p join transactions t on p.prod_id=t.prod_id order by revenue desc;
+
+
 
 
 
