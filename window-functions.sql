@@ -19,7 +19,15 @@ with rank_spend as(
 select category,product,total_spend from rank_spend where rank<=2 order by category,rank;
 
 
-RUNNING TOTAL LOGIC WITH WINDOWS
-2. select sales_date, sales_amount, SUM(sales_amount) OVER(ORDER by sales_date) as running_total from sales;
+2.RUNNING TOTAL LOGIC WITH WINDOWS
+  Select sales_date, sales_amount, SUM(sales_amount) OVER(ORDER by sales_date) as running_total from sales;
+
+
+3.FOR EACH ORDER SHOW % OF TOTAL USER REVENUE IT CONTRIBUTES
+
+select user_id,order_id, revenue, revenue *100.0/ SUM(revenue) OVER(partition by user_id) as user_revenue from orders;
+
+
+
 
 
