@@ -57,6 +57,9 @@ Q12. departments have an average salary HIGHER than the overall company average
 Q13. Write a query to find duplicate records in a table and count their occurrences
      select name,count(name) as name_count from employees group by name having count(name)>1; 
 
+Q14. Write a query to find the second-highest salary 
+     select distinct salary from employees order by salary desc limit 1 offset 1;
+
 
 
 
