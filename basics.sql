@@ -54,6 +54,9 @@ count(*) as perc_emp from employees;
 Q12. departments have an average salary HIGHER than the overall company average
     select departments, avg(salary) as avg_salary from employees group by departments having  avg_salary > (select avg(salary) from employees);
 
+Q13. Write a query to find duplicate records in a table and count their occurrences
+     select name,count(name) as name_count from employees group by name having count(name)>1; 
+
 
 
 
