@@ -1,3 +1,10 @@
+--- CONTINUOS DISTRIBUTION ---
+  -uncounted (measured values like height and time within within a range)
+  -uses probability density function where the probability of any exact single value is zero
+  -visualised in curves
+
+NORMAL DISTRIBUTION
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import norm
