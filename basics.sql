@@ -60,6 +60,16 @@ Q13. Write a query to find duplicate records in a table and count their occurren
 Q14. Write a query to find the second-highest salary 
      select distinct salary from employees order by salary desc limit 1 offset 1;
 
+Q15. Due to an error in the delivery driver instructions, each item's order was swapped with the item in the subsequent row. As a data analyst, you're asked to correct this swapping error and return the proper pairing of order ID and item. If the last item has an odd order ID, it should remain as the last item in the corrected data. For example, if the last item is Order ID 7 Tandoori Chicken, then it should remain as Order ID 7 in the corrected data. In the results, return the correct pairs of order IDs and items.
+
+    select 
+        case 
+            when order_id%2!=0 and order_id!=total_orders then order_id+1
+            when order_id%2!=0 and order_id=total_orders then order_id
+            else order_id-1
+        end as ordered_items, item 
+from orders,
+(select count (order_id) as total_orders from orders) as order_counts order by ordered_items;
 
 
 
